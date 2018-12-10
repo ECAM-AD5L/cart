@@ -4,34 +4,48 @@ from datetime import datetime
 # 3rd party modules
 from flask import make_response, abort
 
+# CART = {
+#     "cart1":{
+#             "item":
+#                 {
+#                 "Id" : "",
+#                 "Nom" : "Macbook Pro",
+#                 "Prix" : "2000",
+#                 "Commentaire" : [
+#                     "Very Good", "Love this product"
+#                 ],
+#                 "Description" : [
+#                     "blue", "Macbook Pro 13 pouce"
+#                 ]
+#                },
+#             },
+#     "cart2":{
+#             "item":{
+#                 "Id" : "",
+#                 "Nom" : "Macbook Pro",
+#                 "Prix" : "2000",
+#                 "Commentaire" : [
+#                     "Very Good", "Love this product"
+#                 ],
+#                 "Description" : [
+#                     "blue", "Macbook Pro 13 pouce"
+#                 ]
+#               },
+#             },
+#     }
 CART = {
-    "cart1":{
-            "item":
-                {
-                "Id" : "",
-                "Nom" : "Macbook Pro",
-                "Prix" : "2000",
-                "Commentaire" : [
-                    "Very Good", "Love this product"
-                ],
-                "Description" : [
-                    "blue", "Macbook Pro 13 pouce"
-                ]
-               },
-            },
-    "cart2":{
-            "item":{
-                "Id" : "",
-                "Nom" : "Macbook Pro",
-                "Prix" : "2000",
-                "Commentaire" : [
-                    "Very Good", "Love this product"
-                ],
-                "Description" : [
-                    "blue", "Macbook Pro 13 pouce"
-                ]
-              },
-            },
+    "item":
+        {
+        "Id" : "",
+        "Nom" : "Macbook Pro",
+        "Prix" : "2000",
+        "Commentaire" : [
+            "Very Good", "Love this product"
+        ],
+        "Description" : [
+            "blue", "Macbook Pro 13 pouce"
+        ]
+       },
     }
 
 def readAllItems():
@@ -51,9 +65,9 @@ def giveToken(nameOfCart):
     :return:        json string with 2 keys : 'Name' and "Description"
     """
 
-    dictionary = CART[nameOfCart]
-
-    return dictionary
+    dictionary = CART.get(nameOfCart)
+    #
+    # return dictionary
 
 
 

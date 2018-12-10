@@ -37,47 +37,31 @@ paths:
             type: array
             items:
               properties:
-                Id:
+                fname:
                   type: string
-                Nom:
+                lname:
                   type: string
-                Prix:
-                  type: string
-                Commentaire:
-                  type: list
-                Description:
-                  type: list
-  /oneCart:
+
+  #TODO : problem with 'parameters'
+  /cart/{nameOfCart}:
     get:
       operationId: cart.giveToken
       tags:
         - Cart
       summary: Read content of only one card
       parameters:
-#      - name: length
-#        in: query
-#        type: integer
-#        description: Number of people to get from people
-#        required: false
-      - nameOfCart: string
-        in: query
-        type: integer
-        description: Name of cart
+      - name: nameOfCart
+        in: path
+        type: string
+        description: Name of the cart to read
         required: false
       responses:
         200:
           description: Successfully read cart list operation
           schema:
-            type: array
-            items:
-              properties:
-                Id:
-                  type: string
-                Nom:
-                  type: string
-                Prix:
-                  type: string
-                Commentaire:
-                  type: list
-                Description:
-                  type: list
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+

@@ -1,2 +1,3 @@
 * Mettre base de données sur serveur 'dakku'
 * Régler problème avec requête dans fichier .yml.
+* voir todos dans ide
