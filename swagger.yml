@@ -54,7 +54,7 @@ paths:
         in: path
         type: string
         description: Name of the cart to read
-        required: false
+        required: true
       responses:
         200:
           description: Successfully read cart list operation
