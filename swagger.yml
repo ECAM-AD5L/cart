@@ -14,7 +14,7 @@ basePath: /api
 paths:
   /cart:
     get:
-      operationId: cart.readAllItems
+      operationId: cart.readAllCarts
       tags:
         - Cart
       summary: Read the entire list of carts
@@ -42,10 +42,9 @@ paths:
                 lname:
                   type: string
 
-  #TODO : problem with 'parameters'
   /cart/{nameOfCart}:
     get:
-      operationId: cart.giveToken
+      operationId: cart.readOneCart
       tags:
         - Cart
       summary: Read content of only one card
@@ -64,4 +63,57 @@ paths:
                 type: string
               lname:
                 type: string
+
+  /cart/delete/{nameOfCart}:
+    delete:
+      operationId: cart.deleteCart
+      tags:
+        - Cart
+      summary: Delete cart according to its name
+      parameters:
+      - name: nameOfCart
+        in: path
+        type: string
+        description: Name of the cart to suppress
+        required: true
+
+      responses:
+        200:
+          description: Successfully suppresed cart from dictionary
+
+  /cart/post:
+    post:
+      operationId: cart.addCart
+      tags:
+        - Cart
+      summary: Add a new cart for new user.
+      parameters:
+      - name: newCart
+        in: body
+        required: true
+        description: Name of the cart to add
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+              description: id of the item.
+            Nom:
+              type: string
+              description: name of the buyer.
+            Prix:
+              type: string
+              description: price.
+            Commentary:
+              type: array
+            Description:
+              type: array
+
+      responses:
+        200:
+          description: Successfully added cart to dictionary
+
+
+
+
 
