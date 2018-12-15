@@ -79,20 +79,42 @@ def deleteCart(nameOfCart):
     :return:        nothing
     """
     if nameOfCart in CART:
-        #TODO : delete dictionary in mongodb
+        #TODO : delete dictionary in mongodb.
         print("Cart deleted !")
     else:
         abort(
-            404, "Cart {nameOfCart} not found.".format(nameOfCart=nameOfCart)
+            404, "Cart '{nameOfCart}' not found.".format(nameOfCart=nameOfCart)
         )
     return "Cart deleted."
 
-def addCart(newCart):
+def addItem(newItem, nameOfCart):
     """
     This function adds a cart according to the parameter nameOfCart.
     :return:        nothing
     """
-    # TODO : add dictionary in mongodb
-    return newCart
+    # TODO : add dictionary in mongodb. If new user, create new dictionary (cart 4 for example).
+    if nameOfCart in CART:
+        print("Item '{id}' suppressed from cart '{nameOfCart}'.".format(id=id, nameOfCart=nameOfCart))
+    else:
+        abort(
+            404, "Cart '{nameOfCart}' not found.".format(nameOfCart=nameOfCart)
+        )
+    return newItem
+
+def deleteItem(id, nameOfCart):
+    """
+    This function deletes an item in selected cart.
+    :return:        nothing
+    """
+    # TODO : suppress item in specified cart in mongodb.
+    if nameOfCart in CART:
+        print("Item '{id}' suppressed from cart '{nameOfCart}'.".format(id=id, nameOfCart=nameOfCart))
+    else:
+        abort(
+            404, "Cart '{nameOfCart}' not found.".format(nameOfCart=nameOfCart)
+        )
+    return "Cart deleted."
+
+
 
 

@@ -19,28 +19,25 @@ paths:
         - Cart
       summary: Read the entire list of carts
       description: Read the list of Cart
-      parameters:
-      - name: length
-        in: query
-        type: integer
-        description: Number of people to get from people
-        required: false
-      - name: offset
-        in: query
-        type: integer
-        description: Offset from beginning of list where to start gathering people
-        required: false
       responses:
         200:
           description: Successfully read cart list operation
           schema:
-            type: array
-            items:
-              properties:
-                fname:
-                  type: string
-                lname:
-                  type: string
+            type: object
+            properties:
+              id:
+                type: string
+                description: id of the item.
+              Nom:
+                type: string
+                description: name of the buyer.
+              Prix:
+                type: string
+                description: price.
+              Commentary:
+                type: array
+              Description:
+                type: array
 
   /cart/{nameOfCart}:
     get:
@@ -58,11 +55,21 @@ paths:
         200:
           description: Successfully read cart list operation
           schema:
+            type: object
             properties:
-              fname:
+              id:
                 type: string
-              lname:
+                description: id of the item.
+              Nom:
                 type: string
+                description: name of the buyer.
+              Prix:
+                type: string
+                description: price.
+              Commentary:
+                type: array
+              Description:
+                type: array
 
   /cart/delete/{nameOfCart}:
     delete:
@@ -76,19 +83,23 @@ paths:
         type: string
         description: Name of the cart to suppress
         required: true
-
       responses:
         200:
           description: Successfully suppresed cart from dictionary
 
-  /cart/post:
+  /cart/{nameOfCart}/item/post:
     post:
-      operationId: cart.addCart
+      operationId: cart.addItem
       tags:
         - Cart
-      summary: Add a new cart for new user.
+      summary: Add a new item.
       parameters:
-      - name: newCart
+      - name: nameOfCart
+        in: path
+        type: string
+        required: true
+        description: Name of the cart in which the item is added.
+      - name: newItem
         in: body
         required: true
         description: Name of the cart to add
@@ -108,11 +119,30 @@ paths:
               type: array
             Description:
               type: array
-
       responses:
         200:
-          description: Successfully added cart to dictionary
+          description: Successfully added cart to dictionary.
 
+  /cart/{nameOfCart}/item/delete/{id}:
+    delete:
+      operationId: cart.deleteItem
+      tags:
+        - Cart
+      summary: delete an item of a cart.
+      parameters:
+        - name: nameOfCart
+          in: path
+          type: string
+          required: true
+          description: Name of the cart in which the item is suppressed.
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: Name of the item that's being suppressed.
+      responses:
+        200:
+          description: Successfully suppressed item from cart.
 
 
 
