@@ -1,7 +1,10 @@
 from flask import render_template
 import connexion
+import pymongo
+
 
 # Create the application instance
+client = pymongo.MongoClient("mongodb+srv://scalable_architecture:password015@cluster0-z5b76.mongodb.net/admin")
 app = connexion.App(__name__, specification_dir='./')
 
 # Read the swagger.yml file to configure the endpoints
