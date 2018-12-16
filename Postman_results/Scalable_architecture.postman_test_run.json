@@ -1,0 +1,242 @@
+{
+	"id": "1626f836-14da-48af-b919-b7b1a370631d",
+	"name": "Scalable_architecture",
+	"allTests": [],
+	"timestamp": "2018-12-15T22:28:49.143Z",
+	"collection_id": "3eb3cdb1-c280-677f-9b52-8d2721312388",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "3eb3cdb1-c280-677f-9b52-8d2721312388",
+		"name": "Scalable_architecture",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [
+			"9a5c7c97-a5fe-0203-086e-cc69513f8570",
+			"cf0c3965-ee09-4bbb-b025-b7b960c6ed47",
+			"3992437e-1416-41fa-becc-fb647629a90f",
+			"da28889c-74ce-432c-acf0-0529e1a83f9b",
+			"18cd3cc1-4555-4fd9-8b78-ac5f5602bf5c"
+		],
+		"folders_order": [],
+		"owner": "4063136",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Get_all_cart",
+			"id": "9a5c7c97-a5fe-0203-086e-cc69513f8570",
+			"url": "localhost:5000/api/cart",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"518"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "518",
+			"totalRequestTime": "518",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get_one_cart",
+			"id": "cf0c3965-ee09-4bbb-b025-b7b960c6ed47",
+			"url": "localhost:5000/api/cart/cart1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"511"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "511",
+			"totalRequestTime": "511",
+			"iterationResults": {}
+		},
+		{
+			"name": "Post_cart",
+			"id": "3992437e-1416-41fa-becc-fb647629a90f",
+			"url": "localhost:5000/api/cart/cart1/item/post",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"508"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "508",
+			"totalRequestTime": "508",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete_item",
+			"id": "da28889c-74ce-432c-acf0-0529e1a83f9b",
+			"url": "localhost:5000/api/cart/cart1/item/delete/1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"505"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "505",
+			"totalRequestTime": "505",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete_cart",
+			"id": "18cd3cc1-4555-4fd9-8b78-ac5f5602bf5c",
+			"url": "localhost:5000/api/cart/delete/cart1",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"508"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "508",
+			"totalRequestTime": "508",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 2550,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Get_all_cart",
+			"id": "9a5c7c97-a5fe-0203-086e-cc69513f8570",
+			"url": "localhost:5000/api/cart",
+			"time": "2018-12-15T22:28:49.143Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Get_one_cart",
+			"id": "cf0c3965-ee09-4bbb-b025-b7b960c6ed47",
+			"url": "localhost:5000/api/cart/cart1",
+			"time": "2018-12-15T22:28:49.143Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Post_cart",
+			"id": "3992437e-1416-41fa-becc-fb647629a90f",
+			"url": "localhost:5000/api/cart/cart1/item/post",
+			"time": "2018-12-15T22:28:49.143Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Delete_item",
+			"id": "da28889c-74ce-432c-acf0-0529e1a83f9b",
+			"url": "localhost:5000/api/cart/cart1/item/delete/1",
+			"time": "2018-12-15T22:28:49.143Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Delete_cart",
+			"id": "18cd3cc1-4555-4fd9-8b78-ac5f5602bf5c",
+			"url": "localhost:5000/api/cart/delete/cart1",
+			"time": "2018-12-15T22:28:49.143Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}

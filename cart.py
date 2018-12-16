@@ -94,7 +94,7 @@ def addItem(newItem, nameOfCart):
     """
     # TODO : add dictionary in mongodb. If new user, create new dictionary (cart 4 for example).
     if nameOfCart in CART:
-        print("Item '{id}' suppressed from cart '{nameOfCart}'.".format(id=id, nameOfCart=nameOfCart))
+        print("New item added to cart '{nameOfCart}'.".format(nameOfCart=nameOfCart))
     else:
         abort(
             404, "Cart '{nameOfCart}' not found.".format(nameOfCart=nameOfCart)
