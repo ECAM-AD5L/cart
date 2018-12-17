@@ -3,9 +3,12 @@ from datetime import datetime
 
 # 3rd party modules
 from flask import make_response, abort, request
+import json
+from bson import json_util
+import pymongo
 
 CART = {
-    "cart1":{
+            "cart" : "cart1",
             "1":
                 {
                 "Id" : "",
@@ -17,7 +20,7 @@ CART = {
                 "Description" : [
                     "blue", "Macbook Pro 13 pouce"
                 ]
-               },
+            },
             "2":
                 {
                 "Id" : "",
@@ -29,9 +32,8 @@ CART = {
                 "Description" : [
                     "red", "Macbook Air 13 pouce"
                 ]
-               },
             },
-    "cart2":{
+            "cart" : "cart2",
             "1":{
                 "Id" : "",
                 "Nom" : "Macbook Pro",
@@ -42,8 +44,8 @@ CART = {
                 "Description" : [
                     "blue", "Macbook Pro 13 pouce"
                 ]
-              },
             },
+
     }
 
 def readAllCarts():
@@ -53,6 +55,7 @@ def readAllCarts():
 
     :return:        json string of list of people
     """
+
     # Create the list of people from our data
     return[CART[key] for key in sorted(CART.keys())]
 
@@ -87,19 +90,18 @@ def deleteCart(nameOfCart):
         )
     return "Cart deleted."
 
-def addItem(newItem, nameOfCart):
+def addItem(newItem):
     """
     This function adds a cart according to the parameter nameOfCart.
     :return:        nothing
     """
     # TODO : add dictionary in mongodb. If new user, create new dictionary (cart 4 for example).
-    if nameOfCart in CART:
-        print("New item added to cart '{nameOfCart}'.".format(nameOfCart=nameOfCart))
-    else:
-        abort(
-            404, "Cart '{nameOfCart}' not found.".format(nameOfCart=nameOfCart)
-        )
-    return newItem
+    client = pymongo.MongoClient("mongodb+srv://scalable_architecture:password015@cluster0-z5b76.mongodb.net/admin")
+    print(type(newItem))
+    print("Client connected.")
+    db = client['scalable_architecture']
+    coll = db.posts
+    coll.insert_many(newItem)
 
 def deleteItem(id, nameOfCart):
     """

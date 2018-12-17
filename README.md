@@ -11,4 +11,6 @@
 ## Python version
     3.7.1
 ## Installed packages 
-    flask, connexion, pymongo (pip)
+    flask, connexion, pymongo, dnspython (pip)
+## Issue
+    Can not connect to cluster when there is only 0.0.0.0 saved in whitelist. It must have the IP address of the current user.

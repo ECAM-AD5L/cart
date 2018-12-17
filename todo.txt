@@ -1,2 +1,4 @@
 * Mettre base de données sur serveur 'dakku'
+* Ajouter item dans le bon cart.
+* Ajouter nouveau cart si il n'existe pas.
 * voir todos dans ide

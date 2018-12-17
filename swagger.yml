@@ -39,6 +39,37 @@ paths:
               Description:
                 type: array
 
+  /cart/post:
+    post:
+      operationId: cart.addItem
+      tags:
+      - Cart
+      summary: Add a new item.
+      parameters:
+      - name: newItem
+        in: body
+        required: true
+        description: Name of the cart to add
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+              description: id of the item.
+            Nom:
+              type: string
+              description: name of the buyer.
+            Prix:
+              type: string
+              description: price.
+            Commentary:
+              type: array
+            Description:
+              type: array
+      responses:
+        200:
+          description: Successfully added cart to dictionary.
+
   /cart/{nameOfCart}:
     get:
       operationId: cart.readOneCart
@@ -87,42 +118,6 @@ paths:
         200:
           description: Successfully suppresed cart from dictionary
 
-  /cart/{nameOfCart}/item/post:
-    post:
-      operationId: cart.addItem
-      tags:
-        - Cart
-      summary: Add a new item.
-      parameters:
-      - name: nameOfCart
-        in: path
-        type: string
-        required: true
-        description: Name of the cart in which the item is added.
-      - name: newItem
-        in: body
-        required: true
-        description: Name of the cart to add
-        schema:
-          type: object
-          properties:
-            id:
-              type: string
-              description: id of the item.
-            Nom:
-              type: string
-              description: name of the buyer.
-            Prix:
-              type: string
-              description: price.
-            Commentary:
-              type: array
-            Description:
-              type: array
-      responses:
-        200:
-          description: Successfully added cart to dictionary.
-
   /cart/{nameOfCart}/item/delete/{id}:
     delete:
       operationId: cart.deleteItem
@@ -143,6 +138,7 @@ paths:
       responses:
         200:
           description: Successfully suppressed item from cart.
+
 
 
 
